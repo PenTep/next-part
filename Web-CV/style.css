@@ -1,0 +1,301 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  background: url("image/abstract-background-cement-wall-shadow-light-concept.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.header:hover::after {
+  left: 100%;
+}
+
+.header .navbar a {
+  position: relative;
+}
+
+.header .navbar a::after {
+  content: "";
+  width: 0px;
+  height: 3px;
+  background-color: #66666648;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.header .navbar a:hover:after {
+  width: 100%;
+}
+
+/* .logo-color {
+  border-radius: 120% / 120%;
+  background-color: aqua;
+  margin-left: -1200px;
+} */
+
+.logo {
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: -1200px;
+}
+.navbar a {
+  font-size: 1.15rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+
+#check {
+  display: none;
+}
+
+.icons {
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 3s ease;
+  }
+
+  #check:checked ~ .navbar {
+    height: 12rem;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-10px);
+    opacity: 0;
+    transform: 0.3s ease;
+  }
+}
+
+#check:checked ~ .navbar a {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: calc(0.15s * var(--i));
+}
+
+/* ==================== start page ======================== */
+
+#logo-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 179, 14);
+  margin-left: -100px;
+  /* display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+.start-page {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.start-image {
+  width: 60vh;
+  margin-top: 20vh;
+  /* margin-right: 280px; */
+  margin-left: 350px;
+}
+
+.strat-text {
+  padding: 20px;
+  margin-right: 60vh;
+  margin-top: 140px;
+}
+#f-text {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;
+  margin-bottom: -15px;
+}
+
+#s-text {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.click-Resume {
+  display: flex;
+  justify-content: space-between;
+}
+
+#red {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0px 20px 40px #00000070;
+  transition: all 0.6s ease-in-out;
+}
+
+#red:hover {
+  background-color: blue;
+  transform: translateY(-5px);
+}
+
+.click-Resume {
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#yello {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0px 20px 40px #00000070;
+  transition: all 0.6s ease-in-out;
+}
+
+#yello:hover {
+  background-color: red;
+  transform: translateY(-5px);
+}
+
+#blue {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: blue;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0px 20px 40px #00000070;
+  transition: all 0.6s ease-in-out;
+}
+
+#blue:hover {
+  background-color: red;
+  transform: translateY(-5px);
+}
+
+hr {
+  margin-top: 120px;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 5px;
+  border-color: rgb(255, 255, 255);
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 80px auto;
+}
